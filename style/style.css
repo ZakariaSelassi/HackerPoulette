@@ -35,22 +35,26 @@ main {
   margin: 1rem;
 }
 
-form {
-  margin: 1rem;
-}
-
-.contact {
+main .contact {
   background-color: rgba(255, 255, 255, 0.15);
   -webkit-backdrop-filter: blur(1px);
   backdrop-filter: blur(1px);
 }
 
-input.transparent-input {
+form {
+  margin: 1rem;
+}
+
+form .error {
+  color: red;
+}
+
+form input.transparent-input {
   background-color: rgba(0, 0, 0, 0);
   border: 1px solid black;
 }
 
-.gender input {
+form .gender input {
   margin: 1rem;
 }
 /*# sourceMappingURL=style.css.map */

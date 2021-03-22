@@ -25,23 +25,23 @@ main {
     border-radius: 10px;
     border: 1px solid rgba(255, 255, 255, 0.18);
     margin: 1rem;
+    .contact {
+        background-color: rgba(255, 255, 255, 0.15);
+        -webkit-backdrop-filter: blur(1px);
+        backdrop-filter: blur(1px);
+    }
 }
 
 form {
     margin: 1rem;
-}
-
-.contact {
-    background-color: rgba(255, 255, 255, 0.15);
-    -webkit-backdrop-filter: blur(1px);
-    backdrop-filter: blur(1px);
-}
-
-input.transparent-input {
-    background-color: rgba(0, 0, 0, 0);
-    border: 1px solid black;
-}
-
-.gender input {
-    margin: 1rem;
+    .error {
+        color: red;
+    }
+    input.transparent-input {
+        background-color: rgba(0, 0, 0, 0);
+        border: 1px solid black;
+    }
+    .gender input {
+        margin: 1rem;
+    }
 }

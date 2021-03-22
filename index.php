@@ -11,33 +11,37 @@
   </head>
 <body>
     <?php include 'country.php'?>
+    <?php include 'verification.php'?>
 
   <main>
   <div class="contact">
           <h1>Contact US</h1>
       </div>
-    <form action="#" method="POST">
-
+    <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="POST">
       <div class="form-group">
         <label for="name">Name:</label>
-        <input type="text" class="form-control  transparent-input" id="name">
+        <input type="text" class="form-control  transparent-input" name="name" id="name">
+        <p class="error"><?php echo $nameError?></p>
       </div>
       <div class="form-group">
         <label for="lastname">lastName:</label>
-        <input type="text" class="form-control  transparent-input" id="lastname">
+        <input type="text" class="form-control  transparent-input" name="lastName" id="lastname">
+        <p class="error"><?php echo $lastNameError?></p>
       </div>
       <div>
         <label for="gender">Gender :</label>
         <div class="form-check-inline">
             <label class="form-check-label">
-              <input type="radio" class="form-check-input " name="gender"> MALE
-              <input type="radio" class="form-check-input" name="gender"> FEMALE
+              <input type="radio" class="form-check-input " name="gender" value="Male"> MALE
+              <input type="radio" class="form-check-input" name="gender" value="female"> FEMALE
             </label>
+            <p class="error"><?php echo $genderError?></p>
         </div>
       </div>
       <div class="form-group">
         <label for="email">email :</label>
-        <input type="email" class="form-control  transparent-input" id="lastname">
+        <input type="email" class="form-control  transparent-input" name="email" id="email">
+        <p class="error"><?php echo $emailError?></p>
       </div>
       <div class="form-group">
         <select class="form-control form-control-sm" name="country" id="ctry">
@@ -50,9 +54,9 @@
         </select>
       </div>
       <div class="form-group shadow-textarea  ">
-        <textarea class="form-control z-depth-1 transparent-input" id="exampleFormControlTextarea6" rows="3" placeholder="Write something here..."></textarea>
+        <textarea class="form-control z-depth-1 transparent-input" id="textArea" rows="3" placeholder="Write something here..." name="areaText"></textarea>
+        <p class="error"></p>
       </div>
-
       <button type="submit" class="btn btn-primary">Submit</button>
     </form>
 </main>
