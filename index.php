@@ -10,59 +10,44 @@
     <link rel="stylesheet" href="style/style.css">
   </head>
 <body>
-    <?php include 'form.php'?>
+    <?php include 'country.php'?>
 
-<main>
+  <main>
+  <div class="contact">
+          <h1>Contact US</h1>
+      </div>
     <form action="#" method="POST">
-      <div class="contactForm">
-        <div>
-          <label for="name">Name : </label>
-          <input type="text" name="name">
-        </div>
-        <div>
-          <label for="lastName">lastName :</label>
-          <input type="text" name="lastname">
-        </div>
-        <div class="genders">
-          <label for="gender">Gender : </label>
-          <div class="choices">
-          Male<input type="radio" name="gender">
-          Femal<input type="radio" name="gender">
-          </div>
-         
-        </div>
-        <div class="subjects">
-          <label for="subject">Subject :</label>
-          <div class="choices">
-          Eating <input type="radio" name="subject">
-         
-          School<input type="radio" name="subject">
-         
-          other<input type="text" name="other">
-          </div>
 
-        </div>
-        <div>
-          <label for="email">Email address</label>
-          <input type="email" id="email" placeholder="name@example.com">
-        </div>
-        <div>
-          <label for="country-select"> Country </label>
-          <select name="country" id="country-select">
-          <option value="">Choose a country</option>
-          <?php
+      <div class="form-group">
+        <label for="name">Name:</label>
+        <input type="text" class="form-control  transparent-input" id="name">
+      </div>
+      <div class="form-group">
+        <label for="lastname">lastName:</label>
+        <input type="text" class="form-control  transparent-input" id="lastname">
+      </div>
+      <div class="form-group">
+        <label for="email">email :</label>
+        <input type="email" class="form-control  transparent-input" id="lastname">
+      </div>
+      <div class="form-group">
+        <label for="email">Email address:</label>
+        <input type="email" class="form-control  transparent-input" placeholder="Enter email" id="email">
+      </div>
+      <div class="form-group">
+        <select class="form-control form-control-sm" name="country" id="ctry">
+        <?php
             foreach($country as $key => $value)
           {
               echo '<option value="'.$key.'">'.$value.'</option>';
             }
-          ?>
-          </select>
-        </div>
-        <label>Your comments</label>
-        <textarea name="message" id="message" cols="35" rows="6"></textarea>
-      </div>  
-  </form>  
+        ?>
+        </select>
+      </div>
+      <div class="form-group shadow-textarea  transparent-input">
+        <textarea class="form-control z-depth-1" id="exampleFormControlTextarea6" rows="3" placeholder="Write something here..."></textarea>
+      </div>
+    </form>  
 </main>
-   
 </body>
 </html>
