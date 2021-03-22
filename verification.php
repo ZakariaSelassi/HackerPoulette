@@ -12,7 +12,8 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
   }else
   {
     $name = verifyInput($_POST["name"]);
-    if(!preg_match("/^[a-zA-Z\. ]*$/",$name)){
+    // verify if only white space and letter 
+    if(filter_var($name,FILTER_SANITIZE_STRING,FILTER_FLAG_STRIP_LOW)){
       $nameError = "Only letter and wite space !";
     }
   }
@@ -56,7 +57,10 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
   }
  
 }
-
+echo "<pre>";
+print_r($_POST);
+echo "</pre>";
+// Sanitize data
 function verifyInput($data)
 {
   // Delete space befor and after 
