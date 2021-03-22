@@ -26,13 +26,18 @@
         <label for="lastname">lastName:</label>
         <input type="text" class="form-control  transparent-input" id="lastname">
       </div>
+      <div>
+        <label for="gender">Gender :</label>
+        <div class="form-check-inline">
+            <label class="form-check-label">
+              <input type="radio" class="form-check-input " name="gender"> MALE
+              <input type="radio" class="form-check-input" name="gender"> FEMALE
+            </label>
+        </div>
+      </div>
       <div class="form-group">
         <label for="email">email :</label>
         <input type="email" class="form-control  transparent-input" id="lastname">
-      </div>
-      <div class="form-group">
-        <label for="email">Email address:</label>
-        <input type="email" class="form-control  transparent-input" placeholder="Enter email" id="email">
       </div>
       <div class="form-group">
         <select class="form-control form-control-sm" name="country" id="ctry">
@@ -44,10 +49,12 @@
         ?>
         </select>
       </div>
-      <div class="form-group shadow-textarea  transparent-input">
-        <textarea class="form-control z-depth-1" id="exampleFormControlTextarea6" rows="3" placeholder="Write something here..."></textarea>
+      <div class="form-group shadow-textarea  ">
+        <textarea class="form-control z-depth-1 transparent-input" id="exampleFormControlTextarea6" rows="3" placeholder="Write something here..."></textarea>
       </div>
-    </form>  
+
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
 </main>
 </body>
 </html>
