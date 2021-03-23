@@ -27,11 +27,13 @@ try {
     $mail->IsHTML(true);
     $mail->Subject = $subject;
     $mail->Body    = "Name: $name $lastName $gender  <br>from: $email <br> The content:  $comment  ";
-    $mail -> send();
-    echo '<div id="sender"> 
+    if($mail -> send()){
+      echo '<div id="sender"> 
       <p>Message has been sent</p>
-      <button type="submit" >close</button>
+     
      </div>';
+    }
+
 } catch (Exception $e) {
     echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
 }

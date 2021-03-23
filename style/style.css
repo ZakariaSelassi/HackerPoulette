@@ -62,7 +62,7 @@ form .gender input {
   display: none;
 }
 
-.sender {
+#sender {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
