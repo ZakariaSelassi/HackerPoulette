@@ -9,6 +9,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
   if(isset($_POST["honey"]) && $_POST["honey"] != "")
   {
     die();
+  
   }
   // verify if input are empty
   if(empty($_POST["name"]) )
@@ -18,7 +19,10 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
   {
     $name = verifyInput($_POST["name"]);
     // verify if only white space and letter 
-    if(!filter_var($name,FILTER_SANITIZE_STRING)){
+    if(!filter_var($name,FILTER_SANITIZE_STRING) && !preg_match("/^[a-zA-z]*$/", $name)){
+      $nameError = "Only letter and wite space !";
+    }else if(!preg_match("/^[a-zA-z]*$/", $name))
+    {
       $nameError = "Only letter and wite space !";
     }
   }
@@ -31,6 +35,9 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
      $lastName = verifyInput($_POST["lastName"]);
      if(!filter_var($lastName,FILTER_SANITIZE_STRING)){
       $lastNameError = "Only letter and wite space !";
+    }else if(!preg_match("/^[a-zA-z]*$/", $lastName))
+    {
+      $nameError = "Only letter and wite space !";
     }
   }
 
@@ -94,12 +101,10 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
 
   if(empty($nameError) && empty($lastNameError) && empty($genderError) && empty($commentError))
   {
-    echo $comment;
     include 'sendEmail.php';
   }
+
 }
-
-
 
 // Sanitize data
 function verifyInput($data)

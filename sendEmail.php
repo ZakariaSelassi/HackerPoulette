@@ -28,7 +28,10 @@ try {
     $mail->Subject = $subject;
     $mail->Body    = "Name: $name $lastName $gender  <br>from: $email <br> The content:  $comment  ";
     $mail -> send();
-    echo 'Message has been sent';
+    echo '<div id="sender"> 
+      <p>Message has been sent</p>
+      <button type="submit" >close</button>
+     </div>';
 } catch (Exception $e) {
     echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
 }

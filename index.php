@@ -3,6 +3,7 @@
   <head>
     <title>Title</title>
     <!-- Required meta tags -->
+    <meta name= "description" content= "formulaire " />
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <!-- Bootstrap CSS -->
@@ -69,5 +70,7 @@
       <button type="submit" class="btn btn-primary" >Submit</button>
     </form>
 </main>
+<script >
 </body>
+
 </html>

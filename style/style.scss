@@ -49,3 +49,14 @@ form {
 #honeyPot {
     display: none;
 }
+
+.sender {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: white;
+    color: black;
+    border: 1px solid black;
+    width: 50%;
+    border-radius: 20px;
+}
