@@ -21,6 +21,7 @@
       <div class="form-group">
         <label for="name">Name:</label>
         <input type="text" class="form-control  transparent-input" name="name" id="name">
+        <input type="text" name="honey" id="honeyPot">
         <p class="error"><?php echo $nameError?></p>
       </div>
       <div class="form-group">
@@ -53,11 +54,19 @@
         ?>
         </select>
       </div>
+
+      <div class="form-group">
+        <select class="form-control form-control-sm" name="subject" id="subject">
+            <option>Question</option>
+            <option>complaint</option>
+            <option>Other</option>
+        </select>
+      </div>
       <div class="form-group shadow-textarea  ">
-        <textarea class="form-control z-depth-1 transparent-input" id="textArea" rows="3" placeholder="Write something here..." name="areaText"></textarea>
+        <textarea class="form-control z-depth-1 transparent-input" id="textArea" rows="3" placeholder="Write something here..." name="comment"></textarea>
         <p class="error"></p>
       </div>
-      <button type="submit" class="btn btn-primary">Submit</button>
+      <button type="submit" class="btn btn-primary" >Submit</button>
     </form>
 </main>
 </body>

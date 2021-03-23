@@ -1,10 +1,15 @@
 <?php
 // Permet d'empecher les hackers d'exploiter les faills de la variable PHP_SELF
 // verification sur chaque valeur 
-$nameError = $lastNameError = $emailError = $genderError = $commentError ="";
-$name = $lastName = $email = $gender = $comment ="";
+$nameError = $lastNameError = $emailError = $genderError = $commentError = $countryError = $subjectError = "";
+$name = $lastName = $email = $gender = $comment = $subject = $ctr = "";
+
 if($_SERVER["REQUEST_METHOD"] == "POST")
 {
+  if(isset($_POST["honey"]) && $_POST["honey"] != "")
+  {
+    die();
+  }
   // verify if input are empty
   if(empty($_POST["name"]) )
   {
@@ -13,7 +18,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
   {
     $name = verifyInput($_POST["name"]);
     // verify if only white space and letter 
-    if(filter_var($name,FILTER_SANITIZE_STRING,FILTER_FLAG_STRIP_LOW)){
+    if(!filter_var($name,FILTER_SANITIZE_STRING)){
       $nameError = "Only letter and wite space !";
     }
   }
@@ -24,8 +29,8 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
   }else
   {
      $lastName = verifyInput($_POST["lastName"]);
-     if(!preg_match("/^[a-zA-Z\. ]*$/",$name)){
-      $nameError = "Only letter and wite space !";
+     if(!filter_var($lastName,FILTER_SANITIZE_STRING)){
+      $lastNameError = "Only letter and wite space !";
     }
   }
 
@@ -44,22 +49,58 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
     $genderError = "gender is required";
   }else
   {
-    $gender = verifyInput($_POST["gender"]);
+     $gender = verifyInput($_POST["gender"]);
+    if(!filter_var($gender,FILTER_SANITIZE_STRING))
+    {
+      $genderError = "gender error ";
+    }
   }
- 
+  if(empty($_POST["country"]))
+  {
+    $countryError = "Country is required";
+  }
+  else
+  {
+    $ctr = verifyInput(($_POST["country"]));
+    if(!filter_var($country,FILTER_SANITIZE_STRING))
+    {
+      $countryError = "country error";
+    }
+  }
+  if(empty($_POST["subject"]))
+  {
+    $subjectError = "Country is required";
+  }
+  else
+  {
+    $subject = verifyInput(($_POST["subject"]));
+    if(!filter_var($subject,FILTER_SANITIZE_STRING))
+    {
+      $subjectError = "subject error";
+    }
+  }
   
   if(empty($_POST["comment"]))
   {
-    $commentError = " ";
+    $commentError = "";
   }else
   {
     $comment = verifyInput($_POST["comment"]);
+    if(!filter_var($comment,FILTER_SANITIZE_STRING))
+    {
+      $commentError = "";
+    }
   }
- 
+
+  if(empty($nameError) && empty($lastNameError) && empty($genderError) && empty($commentError))
+  {
+    echo $comment;
+    include 'sendEmail.php';
+  }
 }
-echo "<pre>";
-print_r($_POST);
-echo "</pre>";
+
+
+
 // Sanitize data
 function verifyInput($data)
 {
@@ -70,6 +111,4 @@ function verifyInput($data)
   $data = htmlspecialchars($data);
   return $data;
 }
-
-
 ?>
