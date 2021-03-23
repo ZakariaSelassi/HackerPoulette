@@ -6,19 +6,15 @@
 }
 
 body {
-    background: #C04848;
-    /* fallback for old browsers */
-    background: -webkit-linear-gradient(to right, #480048, #C04848);
-    /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to right, #480048, #C04848);
-    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background-color: #0d8187;
+    color: #FFF;
 }
 
 main {
     display: flex;
+    width: 25%;
     flex-direction: column;
     justify-content: center;
-    width: 25%;
     background-color: rgba(255, 255, 255, 0.15);
     -webkit-backdrop-filter: blur(1px);
     backdrop-filter: blur(1px);
@@ -29,6 +25,12 @@ main {
         background-color: rgba(255, 255, 255, 0.15);
         -webkit-backdrop-filter: blur(1px);
         backdrop-filter: blur(1px);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        img {
+            width: 25%;
+        }
     }
 }
 
@@ -43,6 +45,10 @@ form {
     }
     .gender input {
         margin: 1rem;
+    }
+    #textArea {
+        background-color: rgba(0, 0, 0, 0);
+        border: 1px solid black;
     }
 }
 

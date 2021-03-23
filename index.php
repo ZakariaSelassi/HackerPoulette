@@ -8,16 +8,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link rel="stylesheet" href="style/style.css">
+    <link rel="stylesheet" href="assets/style/style.css">
   </head>
 <body>
     <?php include 'country.php'?>
     <?php include 'verification.php'?>
-
-  <main>
-  <div class="contact">
-          <h1>Contact US</h1>
-      </div>
+<main>
+    <div class="contact">
+        <h1>Contact US</h1>
+        <img src="assets/img/logo.png">
+    </div>
     <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="POST">
       <div class="form-group">
         <label for="name">Name:</label>
@@ -70,7 +70,6 @@
       <button type="submit" class="btn btn-primary" >Submit</button>
     </form>
 </main>
-<script >
-</body>
 
+</body>
 </html>
